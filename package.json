@@ -18,11 +18,17 @@
     "coverage": "jest --coverage",
     "-----------------------------------------------PRE": "DIVIDER",
     "prebuild": "del-cli ./dist",
+    "precoverage": "del-cli ./coverage",
     "-----------------------------------------------POST": "DIVIDER",
-    "postbuild": "prettier dist/**/*.{d.ts,js} --check --write"
+    "postbuild": "prettier dist/**/*.{d.ts,js} --check --write",
+    "postcoverage": "istanbul-badges-readme"
   },
   "jest": {
     "cacheDirectory": "<rootDir>/.cache/jest",
+    "coverageReporters": [
+      "json-summary",
+      "lcov"
+    ],
     "displayName": "tsc",
     "testEnvironment": "node",
     "moduleFileExtensions": [
@@ -68,18 +74,17 @@
     "@types/jest": "^25.2.1",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
+    "del-cli": "^3.0.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-wezom-relax-ts": "^0.3.1-beta",
     "eslint-plugin-flowtype": "^4.7.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.1.3",
+    "istanbul-badges-readme": "^1.0.5",
     "jest": "^25.5.3",
     "prettier": "^2.0.5",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
-  },
-  "dependencies": {
-    "del-cli": "^3.0.1"
   }
 }
