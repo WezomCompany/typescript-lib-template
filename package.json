@@ -8,14 +8,18 @@
   ],
   "scripts": {
     "dev": "tsc --watch",
-    "test": "npm run prettier && npm run eslint && npm run jest",
     "build": "tsc",
-    "postbuild": "prettier dist/**/*.{d.ts,js} --check --write",
+    "-----------------------------------------------TEST": "DIVIDER",
+    "test": "npm run prettier && npm run eslint && npm run jest",
     "fix": "npm run prettier -- --write && npm run eslint -- --fix && npm run jest",
     "eslint": "eslint src/**/*.ts --cache --cache-location .cache/.eslintcache",
     "prettier": "prettier src/**/*.ts --check",
     "jest": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "-----------------------------------------------PRE": "DIVIDER",
+    "prebuild": "del-cli ./dist",
+    "-----------------------------------------------POST": "DIVIDER",
+    "postbuild": "prettier dist/**/*.{d.ts,js} --check --write"
   },
   "jest": {
     "cacheDirectory": "<rootDir>/.cache/jest",
@@ -74,5 +78,8 @@
     "prettier": "^2.0.5",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "del-cli": "^3.0.1"
   }
 }
