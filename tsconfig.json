@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"isolatedModules": true,
+		"module": "commonjs",
+		"baseUrl": "src",
+		"strict": true,
+		"outDir": "dist"
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"./node_modules",
+		"**/*.test.ts"
+	]
+}

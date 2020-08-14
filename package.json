@@ -1,0 +1,78 @@
+{
+  "name": "lib-name",
+  "version": "0.0.1-prealpha",
+  "description": "description",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "test": "npm run prettier && npm run eslint && npm run jest",
+    "build": "tsc",
+    "postbuild": "prettier dist/**/*.{d.ts,js} --check --write",
+    "fix": "npm run prettier -- --write && npm run eslint -- --fix && npm run jest",
+    "eslint": "eslint src/**/*.ts --cache --cache-location .cache/.eslintcache",
+    "prettier": "prettier src/**/*.ts --check",
+    "jest": "jest",
+    "coverage": "jest --coverage"
+  },
+  "jest": {
+    "cacheDirectory": "<rootDir>/.cache/jest",
+    "displayName": "tsc",
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "node"
+    ],
+    "transform": {
+      "\\.ts": [
+        "ts-jest"
+      ]
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "wezom-relax-ts",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "printWidth": 90,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "useTabs": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lib-org/lib-name.git"
+  },
+  "keywords": [],
+  "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lib-org/lib-name/issues"
+  },
+  "homepage": "https://github.com/lib-org/lib-name#readme",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-wezom-relax-ts": "^0.3.1-beta",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "jest": "^25.5.3",
+    "prettier": "^2.0.5",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3"
+  }
+}
