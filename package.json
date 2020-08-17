@@ -15,7 +15,7 @@
     "eslint": "eslint src/**/*.ts --cache --cache-location .cache/.eslintcache",
     "prettier": "prettier src/**/*.ts --check",
     "jest": "jest",
-    "coverage": "jest --coverage",
+    "coverage": "jest --coverage --collectCoverageFrom=\"./src/**/*.ts\"",
     "-----------------------------------------------PRE": "DIVIDER",
     "prebuild": "del-cli ./dist",
     "precoverage": "del-cli ./coverage",
