@@ -7,6 +7,8 @@
     "dist"
   ],
   "scripts": {
+    "init-tpl": "node init.js",
+    "prezinit-tpl": "npm i --no-save inquirer",
     "dev": "tsc --watch",
     "build": "npm run build:clean && npm run build:tsc-es6 && npm run build:tsc-es5 && npm run build:ts && npm run build:finalize",
     "----------------------------------------------- BUIL-STEPS": "SECTION",
@@ -30,15 +32,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lib-org/lib-name.git"
+    "url": "git+https://github.com/git-hub-owner/lib-name.git"
   },
   "keywords": [],
   "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
   "license": "BSD 3-Clause License",
   "bugs": {
-    "url": "https://github.com/lib-org/lib-name/issues"
+    "url": "https://github.com/git-hub-owner/lib-name/issues"
   },
-  "homepage": "https://github.com/lib-org/lib-name#readme",
+  "homepage": "https://github.com/git-hub-owner/lib-name#readme",
   "devDependencies": {
     "@stripped-ui/eslint-config": "^0.3.0-beta.0",
     "@stripped-ui/eslint-config-ts": "^0.3.1-beta.0",

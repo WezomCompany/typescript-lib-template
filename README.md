@@ -1,9 +1,30 @@
+# Initialize template
+
+## Auto init:
+
+## Manual init: 
+
+Change `"git-hub-owner"` in:  
+
+- README.md  
+- package.json  
+
+Change `"lib-name"` in:  
+
+- README.md  
+- package.json  
+- package-lock.json  
+
+After all inits - remove this section from README.md file
+
+[comment]: <> (CUT OFF HERE)
+
 # `lib-name`
 
 ![Typescript first](https://img.shields.io/badge/TypeScript-First-blue)
-[![BSD-3-Clause License badge](https://img.shields.io/github/license/lib-org/lib-name)](https://github.com/lib-org/lib-name/blob/master/LICENSE)
+[![BSD-3-Clause License badge](https://img.shields.io/github/license/git-hub-owner/lib-name)](https://github.com/git-hub-owner/lib-name/blob/master/LICENSE)
 [![NPM package badge](https://img.shields.io/badge/npm-install-orange.svg)](https://www.npmjs.com/package/lib-name)
-![Test and Build status badge](https://github.com/lib-org/lib-name/workflows/Test%20and%20Build/badge.svg)
+![Test and Build status badge](https://github.com/git-hub-owner/lib-name/workflows/Test%20and%20Build/badge.svg)
 
 _Description_
 
@@ -27,7 +48,7 @@ _Description_
 ### Install npm package
 
 ```bash
-npm i lib-name
+npm i @wezom/lib-name
 ```
 
 ### Import to your codebase
@@ -38,7 +59,7 @@ By default, we distribute our lib as is - original TypeScript files, without tra
 // Import original ts code
 // but requires to be not exclude in `node_modules`.
 // Check your `tsconfig.json`
-import libName from 'lib-name';
+import libName from '@wezom/lib-name';
 ```
 
 You can import compiled files from special folders.
@@ -47,9 +68,9 @@ You can import compiled files from special folders.
 // ES6: const, let, spread, rest and other modern JavaScript features
 // but requires to be not exclude in `node_modules`.
 // Check your `babebl-loader` (if your use webpack as bandler)
-import libName from 'lib-name';
+import libName from '@wezom/lib-name';
 // or ES5: no ES6 features but ready for use as is, without transpiling
-import libName from 'lib-name';
+import libName from '@wezom/lib-name';
 ```
 
 ---
