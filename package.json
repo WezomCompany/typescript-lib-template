@@ -1,8 +1,8 @@
 {
   "name": "lib-name",
-  "version": "0.1.0-alpha",
+  "version": "0.1.1-alpha",
   "description": "description",
-  "main": "dist/index.js",
+  "main": "dist/ts/index.ts",
   "files": [
     "dist"
   ],
