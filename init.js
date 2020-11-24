@@ -95,16 +95,18 @@ inquirer
 		}
 	])
 	.then((answers) => {
-		writeFile(
-			'./package.json',
-			readFile('./package.json')
-				.replace(/npm-package-name/g, answers.npmPackageName)
-				.replace(/lib-name/g, answers.libName)
-				.replace(/"version": ".+"/, '"version": "0.0.1-prealpha"')
-				.replace(/git-hub-owner/g, answers.gitHubOwner)
-				.replace(/lib-author/g, answers.libAuthor)
-				.replace(/lib-author-email/g, answers.libAuthorEmail)
-		);
+		const packageJson = readFile('./package.json')
+			.replace(/npm-package-name/g, answers.npmPackageName)
+			.replace(/lib-name/g, answers.libName)
+			.replace(/"version": ".+"/, '"version": "0.0.1-prealpha"')
+			.replace(/git-hub-owner/g, answers.gitHubOwner)
+			.replace(/lib-author-email/g, answers.libAuthorEmail)
+			.replace(/lib-author/g, answers.libAuthor);
+		const pkg = JSON.parse(packageJson);
+		delete pkg.scripts['init-tpl'];
+		delete pkg.scripts['preinit-tpl'];
+		delete pkg.scripts['postinit-tpl'];
+		writeFile('./package.json', JSON.stringify(pkg, undefined, '  '));
 
 		writeFile(
 			'./package-lock.json',

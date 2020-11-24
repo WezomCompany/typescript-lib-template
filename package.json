@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "init-tpl": "node init.js",
-    "prezinit-tpl": "npm i --no-save inquirer",
+    "preinit-tpl": "npm i --no-save inquirer",
+    "postinit-tpl": "npm uninstall inquirer",
     "dev": "tsc --watch",
     "build": "npm run build:clean && npm run build:tsc-es6 && npm run build:tsc-es5 && npm run build:ts && npm run build:finalize",
     "----------------------------------------------- BUIL-STEPS": "SECTION",

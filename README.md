@@ -2,20 +2,28 @@
 
 ## Auto init:
 
-## Manual init: 
+```bash
+npm run init-tpl
+```
 
-Change `"git-hub-owner"` in:  
+## or Manual init: 
 
-- README.md  
-- package.json  
+1. Change `git-hub-owner` in:
+    - README.md
+    - package.json
+1. Change `npm-package-name` in:
+    - README.md
+    - package.json
+    - package-lock.json
+1. Change `lib-name` in:
+    - README.md
+    - package.json
+1. Change `license-holder` in:
+    - LICENSE
+1. Change `lib-author` and `lib-author-email` in:
+    - package.json
 
-Change `"lib-name"` in:  
-
-- README.md  
-- package.json  
-- package-lock.json  
-
-After all inits - remove this section from README.md file
+After all - delete `init.js` file and remove this section from `README.md` file
 
 [comment]: <> (CUT OFF HERE)
 # `lib-name`
@@ -58,7 +66,7 @@ By default, we distribute our lib as is - original TypeScript files, without tra
 // Import original ts code
 // but requires to be not exclude in `node_modules`.
 // Check your `tsconfig.json`
-import libName from 'npm-package-name';
+import npmPackage from 'npm-package-name';
 ```
 
 You can import compiled files from special folders.
@@ -67,9 +75,9 @@ You can import compiled files from special folders.
 // ES6: const, let, spread, rest and other modern JavaScript features
 // but requires to be not exclude in `node_modules`.
 // Check your `babebl-loader` (if your use webpack as bandler)
-import libName from 'npm-package-name';
+import npmPackage from 'npm-package-name/dist/es-6';
 // or ES5: no ES6 features but ready for use as is, without transpiling
-import libName from 'npm-package-name';
+import npmPackage from 'npm-package-name/dist/es-5';
 ```
 
 ---
