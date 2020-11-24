@@ -35,7 +35,7 @@
     "url": "git+https://github.com/git-hub-owner/lib-name.git"
   },
   "keywords": [],
-  "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
+  "author": "lib-author <lib-author-email>",
   "license": "BSD 3-Clause License",
   "bugs": {
     "url": "https://github.com/git-hub-owner/lib-name/issues"
