@@ -20,6 +20,8 @@ const defaultInputValidate = (input) => {
 };
 
 const readFile = (file) => fs.readFileSync(path.join(__dirname, file)).toString();
+const writeFile = (file, content) =>
+	fs.writeFileSync(path.join(__dirname, file), content);
 
 try {
 	const _c = readFile('.git/config');
@@ -85,11 +87,43 @@ inquirer
 		}
 	])
 	.then((answers) => {
-		console.log(answers);
-		const packageJson = readFile('./package.json');
-		const packageLockJson = readFile('./package-lock.json');
-		const readmeMD = readFile('./README.md');
-		packageJson.replace(/lib-name/)
+		writeFile(
+			'./package.json',
+			readFile('./package.json')
+				.replace(/lib-name/g, answers.libName)
+				.replace(/git-hub-owner/g, answers.gitHubOwner)
+				.replace(/"version": ".+"/, '0.0.1-prealpha')
+				.replace(/lib-author/g, answers.libAuthor)
+				.replace(/lib-author-email/g, answers.libAuthorEmail)
+		);
+
+		writeFile(
+			'./package-lock.json',
+			readFile('./package-lock.json')
+				.replace(/lib-name/g, answers.libName)
+				.replace(/"version": ".+"/, '0.0.1-prealpha')
+		);
+
+		writeFile(
+			'./LICENSE',
+			readFile('./LICENSE').replace(
+				/license-holder/g,
+				[
+					answers.licenseHolder,
+					` <${answers.licenseHolderEmail}>`,
+					answers.licenseHolderUrl ? `, ${answers.licenseHolderUrl}` : ''
+				].join('')
+			)
+		);
+
+		writeFile(
+			'./README.md',
+			readFile('./README.md')
+				.split('[comment]: <> (CUT OFF HERE)')
+				.pop()
+				.replace(/lib-name/g, answers.libName)
+				.replace(/git-hub-owner/g, answers.gitHubOwner)
+		);
 	})
 	.catch((error) => {
 		console.log(error);

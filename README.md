@@ -18,7 +18,6 @@ Change `"lib-name"` in:
 After all inits - remove this section from README.md file
 
 [comment]: <> (CUT OFF HERE)
-
 # `lib-name`
 
 ![Typescript first](https://img.shields.io/badge/TypeScript-First-blue)
