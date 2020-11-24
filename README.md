@@ -22,7 +22,7 @@ After all inits - remove this section from README.md file
 
 ![Typescript first](https://img.shields.io/badge/TypeScript-First-blue)
 [![BSD-3-Clause License badge](https://img.shields.io/github/license/git-hub-owner/lib-name)](https://github.com/git-hub-owner/lib-name/blob/master/LICENSE)
-[![NPM package badge](https://img.shields.io/badge/npm-install-orange.svg)](https://www.npmjs.com/package/lib-name)
+[![NPM package badge](https://img.shields.io/badge/npm-install-orange.svg)](https://www.npmjs.com/package/npm-package-name)
 ![Test and Build status badge](https://github.com/git-hub-owner/lib-name/workflows/Test%20and%20Build/badge.svg)
 
 _Description_
@@ -47,7 +47,7 @@ _Description_
 ### Install npm package
 
 ```bash
-npm i @wezom/lib-name
+npm i npm-package-name
 ```
 
 ### Import to your codebase
@@ -58,7 +58,7 @@ By default, we distribute our lib as is - original TypeScript files, without tra
 // Import original ts code
 // but requires to be not exclude in `node_modules`.
 // Check your `tsconfig.json`
-import libName from '@wezom/lib-name';
+import libName from 'npm-package-name';
 ```
 
 You can import compiled files from special folders.
@@ -67,9 +67,9 @@ You can import compiled files from special folders.
 // ES6: const, let, spread, rest and other modern JavaScript features
 // but requires to be not exclude in `node_modules`.
 // Check your `babebl-loader` (if your use webpack as bandler)
-import libName from '@wezom/lib-name';
+import libName from 'npm-package-name';
 // or ES5: no ES6 features but ready for use as is, without transpiling
-import libName from '@wezom/lib-name';
+import libName from 'npm-package-name';
 ```
 
 ---

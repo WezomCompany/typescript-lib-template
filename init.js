@@ -9,7 +9,8 @@ const defaults = {
 	licenseHolderUrl: '',
 	libAuthor: (answers) => answers.licenseHolder,
 	libAuthorEmail: (answers) => answers.licenseHolderEmail,
-	libName: ''
+	libName: '',
+	npmPackageName: (answers) => answers.libName
 };
 
 const defaultInputValidate = (input) => {
@@ -42,6 +43,13 @@ inquirer
 			name: 'libName',
 			message: 'libName *',
 			default: defaults.libName,
+			validate: defaultInputValidate
+		},
+		{
+			type: 'input',
+			name: 'npmPackageName',
+			message: 'npmPackageName *',
+			default: defaults.npmPackageName,
 			validate: defaultInputValidate
 		},
 		{
@@ -90,9 +98,10 @@ inquirer
 		writeFile(
 			'./package.json',
 			readFile('./package.json')
+				.replace(/npm-package-name/g, answers.npmPackageName)
 				.replace(/lib-name/g, answers.libName)
+				.replace(/"version": ".+"/, '"version": "0.0.1-prealpha"')
 				.replace(/git-hub-owner/g, answers.gitHubOwner)
-				.replace(/"version": ".+"/, '0.0.1-prealpha')
 				.replace(/lib-author/g, answers.libAuthor)
 				.replace(/lib-author-email/g, answers.libAuthorEmail)
 		);
@@ -100,8 +109,8 @@ inquirer
 		writeFile(
 			'./package-lock.json',
 			readFile('./package-lock.json')
-				.replace(/lib-name/g, answers.libName)
-				.replace(/"version": ".+"/, '0.0.1-prealpha')
+				.replace(/npm-package-name/g, answers.npmPackageName)
+				.replace(/"version": ".+"/, '"version": "0.0.1-prealpha"')
 		);
 
 		writeFile(
@@ -122,6 +131,7 @@ inquirer
 				.split('[comment]: <> (CUT OFF HERE)')
 				.pop()
 				.replace(/lib-name/g, answers.libName)
+				.replace(/npm-package-name/g, answers.npmPackageName)
 				.replace(/git-hub-owner/g, answers.gitHubOwner)
 		);
 	})

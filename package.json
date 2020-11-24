@@ -1,5 +1,5 @@
 {
-  "name": "lib-name",
+  "name": "npm-package-name",
   "version": "0.1.1-alpha",
   "description": "description",
   "main": "dist/ts/index.ts",
