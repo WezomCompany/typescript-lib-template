@@ -1,7 +1,4 @@
-*.log
-*.tgz
-.cache
-.idea
-dist
-coverage
-node_modules
+.cache/
+coverage/
+node_modules/
+dist/
