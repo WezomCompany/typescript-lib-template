@@ -19,11 +19,11 @@ export function processAnswers(answers) {
 		readme: readFile('README.md'),
 	};
 
-	replacePlaceholders(files.license, PLACEHOLDERS);
-	replacePlaceholders(files.packageJson, PLACEHOLDERS);
-	replacePlaceholders(files.readme, PLACEHOLDERS);
-	removeInitScript(files.packageJson);
-	cutOff(files.readme);
+	files.license = replacePlaceholders(files.license, PLACEHOLDERS);
+	files.packageJson = replacePlaceholders(files.packageJson, PLACEHOLDERS);
+	files.packageJson = removeInitScript(files.packageJson);
+	files.readme = replacePlaceholders(files.readme, PLACEHOLDERS);
+	files.readme = cutOff(files.readme);
 
 	writeFile('LICENSE', files.license);
 	writeFile('package.json', files.packageJson);
