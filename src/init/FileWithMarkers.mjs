@@ -31,7 +31,6 @@ export class FileWithMarkers {
 	 * @throws {Error} Path does not exist
 	 */
 	writeToDisk(filepath) {
-		console.log('Writing to disk:', filepath, this.content);
 		fs.writeFileSync(filepath, this.content, 'utf-8');
 	}
 }
