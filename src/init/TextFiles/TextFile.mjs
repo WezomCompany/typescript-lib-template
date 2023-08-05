@@ -1,28 +1,12 @@
 import fs from 'node:fs';
-import { Placeholder } from './Placeholder.mjs';
 
-export class FileWithMarkers {
+export class TextFile {
 	/**
 	 * @param {string} filepath
 	 * @throws {Error} File does not exist
 	 */
 	constructor(filepath) {
 		this.content = fs.readFileSync(filepath, 'utf-8');
-	}
-
-	/**
-	 *
-	 * @param {Record<string, Placeholder>} record
-	 * @returns {void}
-	 */
-	replaceFromRecord(record) {
-		for (const key in record) {
-			const placeholder = record[key];
-			this.content = this.content.replace(
-				placeholder.regExp,
-				placeholder.replacement
-			);
-		}
 	}
 
 	/**

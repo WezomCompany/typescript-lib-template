@@ -3,10 +3,7 @@ import { Placeholder } from '../Placeholder.mjs';
 
 describe('Placeholder', () => {
 	it('should change replacement value', () => {
-		const placeholder = new Placeholder(
-			'X_Y_Z',
-			'ABC'
-		);
+		const placeholder = new Placeholder('X_Y_Z', 'ABC');
 		placeholder.change('123');
 		expect(placeholder.replacement).toBe('123');
 	});

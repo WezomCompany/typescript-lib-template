@@ -3,10 +3,7 @@ export class Placeholder {
 	 * @param {string} marker
 	 * @param {string} replacement
 	 */
-	constructor(
-		marker,
-		replacement
-	) {
+	constructor(marker, replacement) {
 		this.regExp = new RegExp(`{#${marker}#}`, 'g');
 		this.replacement = replacement;
 	}
