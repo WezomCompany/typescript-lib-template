@@ -8,8 +8,7 @@
     "lib"
   ],
   "scripts": {
-    "init": "node src/init/index.mjs",
-    "postinit-tpl": "pnpm remove cp-cli from-cwd inquirer",
+    "init": "node src/init/index.mjs && pnpm remove cp-cli from-cwd inquirer",
     "build": "rollup --config rollup.config.mjs",
     "prebuild": "del-cli dist",
     "postbuild": "del-cli dist/**/__specs__",
