@@ -1,0 +1,21 @@
+.browserslistrc
+.editorconfig
+.gitattributes
+.gitignore
+.prettierignore
+
+*.mjs text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.json5 text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.less text eol=lf
+*.map text eol=lf
+*.snap text eol=lf

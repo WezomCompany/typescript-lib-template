@@ -32,6 +32,9 @@ devDependencies:
   eslint-config-prettier:
     specifier: ^8.9.0
     version: 8.9.0(eslint@8.46.0)
+  from-cwd:
+    specifier: ^1.0.1
+    version: 1.0.1
   glob:
     specifier: ^10.3.3
     version: 10.3.3
@@ -2017,6 +2020,10 @@ packages:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
+    dev: true
+
+  /from-cwd@1.0.1:
+    resolution: {integrity: sha512-rKM9aAkgRTEl7NxxLOa+3WzkIKCRDGJiT7hlEREetURM1aSpptPcuDNNaqvPQaGDyYTbHZeUf99VPZW9nK7AjA==}
     dev: true
 
   /fs-extra@7.0.1:

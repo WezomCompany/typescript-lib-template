@@ -1,15 +1,16 @@
 {
   "name": "{#PACKAGE_NAME#}",
-  "version": "0.0.1",
+  "version": "{#PACKAGE_VERSION#}",
   "description": "{#PACKAGE_DESCRIPTION#}",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "files": [
     "lib"
   ],
   "scripts": {
-    "init": "node init.js",
-    "postinit-tpl": "pnpm remove inquirer",
+    "init": "node src/init/index.mjs",
+    "postinit-tpl": "pnpm remove cp-cli from-cwd inquirer",
     "build": "rollup --config rollup.config.mjs",
     "prebuild": "del-cli dist",
     "postbuild": "del-cli dist/**/__specs__",
@@ -26,12 +27,12 @@
   "author": "{#PACKAGE_AUTHOR_NAME#} <{#PACKAGE_AUTHOR_EMAIL#}>",
   "license": "BSD 3-Clause License",
   "bugs": {
-    "url": "https://github.com/{#REPO_OWNER#}/{#REPO_NAME#}/issues"
+    "url": "{#REPO_URL#}/issues"
   },
-  "homepage": "https://github.com/{#REPO_OWNER#}/{#REPO_NAME#}#readme",
+  "homepage": "{#REPO_URL#}#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{#REPO_OWNER#}/{#REPO_NAME#}.git"
+    "url": "git+{#REPO_URL#}.git"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.3",
@@ -43,6 +44,7 @@
     "del-cli": "^5.0.0",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.9.0",
+    "from-cwd": "^1.0.1",
     "glob": "^10.3.3",
     "inquirer": "^8.2.6",
     "istanbul-badges-readme": "^1.8.5",
