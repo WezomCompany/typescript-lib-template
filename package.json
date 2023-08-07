@@ -32,6 +32,9 @@
     "type": "git",
     "url": "git+{#REPO_URL#}.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.2",
