@@ -18,10 +18,10 @@ export default {
 	input: Object.fromEntries(files),
 	output: [
 		{
-			dir: 'dist',
+			dir: 'lib',
 			format: 'cjs',
 		},
 	],
 	plugins: [typescript(), terser()],
-	external: ['negotiator', '@formatjs/intl-localematcher'],
+	external: [],
 };

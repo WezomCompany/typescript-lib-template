@@ -3,9 +3,9 @@
 		"target": "es6",
 		"module": "esnext",
 		"moduleResolution": "node",
-		"lib": ["es2017", "es7", "es6", "dom"],
+		"lib": ["esnext", "dom"],
 		"declaration": true,
-		"outDir": "dist",
+		"outDir": "lib",
 		"strict": true,
 		"esModuleInterop": true
 	},
