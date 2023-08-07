@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { placeholder } from '../placeholder';
+import { placeholder } from '../placeholder.mjs';
 
 describe('placeholder', () => {
 	it("should return the author's message", () => {

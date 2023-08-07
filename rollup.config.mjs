@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const files = glob
-	.sync('src/*.ts')
+	.sync('src/*.mts')
 	.map((file) => [
 		path.relative(
 			'src',
@@ -16,12 +16,14 @@ const files = glob
 
 export default {
 	input: Object.fromEntries(files),
-	output: [
-		{
-			dir: 'lib',
-			format: 'cjs',
-		},
-	],
+	makeAbsoluteExternalsRelative: true,
+	preserveEntrySignatures: 'strict',
+	output: {
+		dir: 'lib',
+		esModule: true,
+		preserveModules: true,
+		entryFileNames: '[name].mjs',
+	},
 	plugins: [typescript(), terser()],
 	external: [],
 };
