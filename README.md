@@ -1,9 +1,9 @@
 # DISCLAIMER
 
-> This template is a solution to specific needs that are relevant for me now.  
+> This template is a solution to specific needs that are relevant for us now.  
 > It does not pretend to be a comprehensive use for all cases.
 >
-> The template uses what I consider to be the best libraries at the moment.
+> The template uses what we consider to be the best libraries at the moment.
 >
 > The template may change in the future!  
 > Use it at your own risk.
