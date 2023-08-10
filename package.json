@@ -15,9 +15,9 @@
     "test": "vitest run",
     "test-with-watch-mode": "vitest",
     "test-with-coverage": "vitest run --coverage && istanbul-badges-readme && prettier \"./README.md\" --check --write",
-    "lint": "eslint \"./src/**/**.ts\" --cache --cache-location ./.cache/eslint/src",
+    "lint": "eslint \"./src/**/**.mts\" --cache --cache-location ./.cache/eslint/src",
     "lint-with-autofix": "pnpm run lint --fix",
-    "format": "prettier \"./src/**/*.ts\" --write --check",
+    "format": "prettier \"./src/**/*.mts\" --write --check",
     "local-pr-ready-check": "pnpm run format && pnpm run lint-with-autofix && pnpm run test",
     "ci-test": "pnpm run lint && pnpm run test"
   },
