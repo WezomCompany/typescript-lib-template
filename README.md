@@ -11,6 +11,7 @@
 ## Initialize this template
 
 ```sh
+pnpm install
 pnpm run init
 ```
 
