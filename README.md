@@ -14,6 +14,9 @@
 pnpm run init
 ```
 
+After everything is done - commit the changes and push them to git.   
+Then start developing your library.
+
 #### Initialization process
 
 1. Get all available static information about the current repository:
@@ -26,11 +29,11 @@ pnpm run init
    from static code
     - Package name (default: folder name)
     - Package description (default: empty)
-    - Package version (default: 0.0.0)
-    - Package author (default: Git repository owner)
-    - Package author email (default: Git repository owner email)
-    - Repository URL (default: Git repository URL)
-    - License owner (default: Git repository owner)
+    - Package version (default: 0.0.0-alpha.0)
+    - Package author (default: git user name)
+    - Package author email (default: git user email)
+    - Repository URL (default: git repository URL)
+    - License owner (default: git user name)
 3. Replace all text markers in the templates with the collected information
     - `<root_dir>/LICENSE`
     - `<root_dir>/package.json`
