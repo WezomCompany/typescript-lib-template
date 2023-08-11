@@ -15,7 +15,7 @@ export function processAnswers(answers) {
 
 	const files = {
 		license: readFile('LICENSE'),
-		packageJson: readFile('packageon'),
+		packageJson: readFile('package.json'),
 		readme: readFile('README.md'),
 	};
 
@@ -26,6 +26,6 @@ export function processAnswers(answers) {
 	files.readme = cutOff(files.readme);
 
 	writeFile('LICENSE', files.license);
-	writeFile('packageon', files.packageJson);
+	writeFile('package.json', files.packageJson);
 	writeFile('README.md', files.readme);
 }
