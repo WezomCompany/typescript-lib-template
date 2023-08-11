@@ -1,4 +1,4 @@
-import { Placeholder } from './Placeholder.mjs';
+import { Placeholder } from './Placeholder';
 
 /**
  * @param {string} content
@@ -8,10 +8,7 @@ import { Placeholder } from './Placeholder.mjs';
 export function replacePlaceholders(content, record) {
 	for (const key in record) {
 		const placeholder = record[key];
-		content = content.replace(
-			placeholder.regExp,
-			placeholder.replacement
-		);
+		content = content.replace(placeholder.regExp, placeholder.replacement);
 	}
 	return content;
 }

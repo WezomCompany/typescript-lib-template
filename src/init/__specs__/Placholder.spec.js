@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Placeholder } from '../Placeholder.mjs';
+import { Placeholder } from '../Placeholder';
 
 describe('Placeholder', () => {
 	it('should change replacement value', () => {

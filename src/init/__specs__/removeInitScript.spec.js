@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { removeInitScript } from '../removeInitScript.mjs';
+import { removeInitScript } from '../removeInitScript';
 
 describe('removeInitScript', () => {
 	it('should remove init script line', () => {
@@ -10,8 +10,8 @@ describe('removeInitScript', () => {
     "lib"
   ],
   "scripts": {
-    "init": "node src/init/index.mjs",
-    "build": "rollup --config rollup.config.mjs"
+    "init": "node src/init/index.js",
+    "build": "rollup --config rollup.config.js"
   }
 }`;
 
@@ -23,7 +23,7 @@ describe('removeInitScript', () => {
     "lib"
   ],
   "scripts": {
-    "build": "rollup --config rollup.config.mjs"
+    "build": "rollup --config rollup.config.js"
   }
 }`);
 	});

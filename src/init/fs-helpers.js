@@ -1,5 +1,5 @@
-import fromCWD from "from-cwd";
-import fs from "fs";
+import fromCWD from 'from-cwd';
+import fs from 'fs';
 
 /**
  * @param {string} filename

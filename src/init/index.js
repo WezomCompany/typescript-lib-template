@@ -1,6 +1,6 @@
 import inquirer from 'inquirer';
-import { PLACEHOLDERS } from './placeholders.mjs';
-import { processAnswers } from './processAnswers.mjs';
+import { PLACEHOLDERS } from './placeholders';
+import { processAnswers } from './processAnswers';
 
 inquirer
 	.prompt([

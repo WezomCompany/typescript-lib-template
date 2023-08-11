@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cutOff } from '../cutOff.mjs';
+import { cutOff } from '../cutOff';
 
 describe('cutOff', () => {
 	it('should cut off content from the beginning to the marker', () => {
@@ -33,7 +33,7 @@ Accusantium alias amet assumenda cupiditate deleniti dolorem
 
 enim error hic minima minus modi nobis numquam placeat praesentium,
 quod reiciendis saepe similique temporibus!
-`
+`;
 		const result = cutOff(input);
 		expect(result).toBe(`# Input file
 

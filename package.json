@@ -2,23 +2,33 @@
   "name": "{#PACKAGE_NAME#}",
   "version": "{#PACKAGE_VERSION#}",
   "description": "{#PACKAGE_DESCRIPTION#}",
-  "main": "lib/index.mjs",
-  "types": "lib/index.d.mts",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs",
+      "types": "./lib/index.d.ts"
+    }
+  },
   "files": [
     "lib"
   ],
   "scripts": {
-    "init": "node src/init/index.mjs && pnpm remove cp-cli from-cwd inquirer && del-cli src/init",
-    "build": "rollup --config rollup.config.mjs",
+    "init": "node src/init/index.js && pnpm remove cp-cli from-cwd inquirer && del-cli src/init",
+    "build": "rollup --config rollup.config.js",
     "prebuild": "del-cli lib",
     "postbuild": "del-cli lib/**/__specs__",
+    "prepublishOnly": "pnpm run build",
     "test": "vitest run",
     "test-with-watch-mode": "vitest",
     "test-with-coverage": "vitest run --coverage && istanbul-badges-readme && prettier \"./README.md\" --check --write",
     "lint": "eslint \"./src/**/**.ts\" --cache --cache-location ./.cache/eslint/src",
     "lint-with-autofix": "pnpm run lint --fix",
     "format": "prettier \"./src/**/*.ts\" --write --check",
-    "local-pr-ready-check": "pnpm run format && pnpm run lint-with-autofix && pnpm run test",
+    "local-pr-ready-check": "pnpm run format && pnpm run lint-with-autofix && pnpm run test-with-coverage && pnpm run build",
     "ci-test": "pnpm run lint && pnpm run test"
   },
   "keywords": [],

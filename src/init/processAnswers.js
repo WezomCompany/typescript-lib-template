@@ -1,8 +1,8 @@
-import { cutOff } from './cutOff.mjs';
-import { readFile, writeFile } from './fs-helpers.mjs';
-import { PLACEHOLDERS } from './placeholders.mjs';
-import { removeInitScript } from './removeInitScript.mjs';
-import { replacePlaceholders } from './replacePlaceholders.mjs';
+import { cutOff } from './cutOff';
+import { readFile, writeFile } from './fs-helpers';
+import { PLACEHOLDERS } from './placeholders';
+import { removeInitScript } from './removeInitScript';
+import { replacePlaceholders } from './replacePlaceholders';
 
 /**
  * @param {Object} answers
@@ -15,7 +15,7 @@ export function processAnswers(answers) {
 
 	const files = {
 		license: readFile('LICENSE'),
-		packageJson: readFile('package.json'),
+		packageJson: readFile('packageon'),
 		readme: readFile('README.md'),
 	};
 
@@ -26,6 +26,6 @@ export function processAnswers(answers) {
 	files.readme = cutOff(files.readme);
 
 	writeFile('LICENSE', files.license);
-	writeFile('package.json', files.packageJson);
+	writeFile('packageon', files.packageJson);
 	writeFile('README.md', files.readme);
 }
