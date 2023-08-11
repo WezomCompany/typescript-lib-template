@@ -1,5 +1,3 @@
-import { Placeholder } from './Placeholder';
-
 /**
  * @param {string} content
  * @param {Record<string, Placeholder>} record

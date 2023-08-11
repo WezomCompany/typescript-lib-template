@@ -1,8 +1,8 @@
-import { cutOff } from './cutOff';
-import { readFile, writeFile } from './fs-helpers';
-import { PLACEHOLDERS } from './placeholders';
-import { removeInitScript } from './removeInitScript';
-import { replacePlaceholders } from './replacePlaceholders';
+import { cutOff } from './cutOff.js';
+import { readFile, writeFile } from './fs-helpers.js';
+import { PLACEHOLDERS } from './placeholders.js';
+import { removeInitScript } from './removeInitScript.js';
+import { replacePlaceholders } from './replacePlaceholders.js';
 
 /**
  * @param {Object} answers

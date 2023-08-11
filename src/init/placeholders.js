@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 import fromCWD from 'from-cwd';
-import { Placeholder } from './Placeholder';
+import { Placeholder } from './Placeholder.js';
 
 const gitUserName = execSync('git config user.name').toString().trim();
 const gitUserEmail = execSync('git config user.email').toString().trim();
