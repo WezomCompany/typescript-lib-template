@@ -28,7 +28,7 @@
     "lint": "eslint \"./src/**/**.ts\" --cache --cache-location ./.cache/eslint/src",
     "lint-with-autofix": "pnpm run lint --fix",
     "format": "prettier \"./src/**/*.ts\" --write --check",
-    "local-pr-ready-check": "pnpm run format && pnpm run lint-with-autofix && pnpm run test-with-coverage && pnpm run build",
+    "pr-ready": "pnpm run format && pnpm run lint-with-autofix && pnpm run test-with-coverage && pnpm run build",
     "ci-test": "pnpm run lint && pnpm run test"
   },
   "keywords": [],
